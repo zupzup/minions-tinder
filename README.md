@@ -4,6 +4,11 @@ A react-based implementation of the inspiration feature
 
 ## TODO
 
+* cleanup
+* tests
+* styling
+* device testing
+* size calculations
 
 ## DONE
 
