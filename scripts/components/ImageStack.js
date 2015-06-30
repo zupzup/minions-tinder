@@ -25,13 +25,13 @@ const ImageStack = React.createClass({
         }
     },
 
-    _handleDragEnd(endHandler, e, ui) {
+    _handleDragEnd(animateBackHandler, animateOutHandler, e, ui) {
         if (ui.position.left > THRESHOLD) {
-            this.props.rightHandler();
+            animateOutHandler(ui.position.left, ui.position.top, this.props.rightHandler);
         } else if (ui.position.left < (- THRESHOLD)) {
-            this.props.leftHandler();
+            animateOutHandler(ui.position.left, ui.position.top, this.props.leftHandler);
         } else {
-            endHandler(ui.position.left, ui.position.top);
+            animateBackHandler(ui.position.left, ui.position.top);
         }
     },
 

@@ -33,6 +33,18 @@ const Image = React.createClass({
         });
     },
 
+    _animateOut(endX, endY, endHandler) {
+        this.tweenState('left', {
+            duration: ANIMATION_LENGTH,
+            endValue: endX * 10
+        });
+        this.tweenState('top', {
+            duration: ANIMATION_LENGTH,
+            endValue: endY * 10,
+            onEnd: endHandler
+        });
+    },
+
     _resetDraggable() {
         this.refs.draggable.resetState();
         this.setState({
@@ -42,7 +54,7 @@ const Image = React.createClass({
     },
 
     render() {
-        const endHandler = this.props.endHandler.bind(null, this._animateBack);
+        const endHandler = this.props.endHandler.bind(null, this._animateBack, this._animateOut);
         const tweeningY = this.getTweeningValue('top');
         const tweeningX = this.getTweeningValue('left');
         const animating = tweeningX > 0 ? ' animating' : '';

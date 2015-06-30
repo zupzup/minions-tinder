@@ -25,7 +25,6 @@ const App = React.createClass({
 
     _discardImage() {
         const images = this.state.images;
-        console.log('discard');
         this.setState({
             images: images.slice(0, images.length - 1)
         });
@@ -33,7 +32,6 @@ const App = React.createClass({
 
     _favImage() {
         const images = this.state.images;
-        console.log('fav');
         this.setState({
             images: images.slice(0, images.length - 1)
         });
