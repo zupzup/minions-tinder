@@ -5,3 +5,28 @@ body {
     background: #fff;
 }
 
+.stacked {
+    position: absolute;
+    height: 200px;
+}
+
+.stack {
+    position: relative;
+    height: 20rem;
+}
+
+.buttons {
+    cursor: pointer;
+    font-size: 4rem;
+    user-select: none;
+
+    &.ion-heart {
+        color: brown;
+    }
+
+    &.ion-close {
+        color: grey;
+    }
+}
+
+

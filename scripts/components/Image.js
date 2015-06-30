@@ -7,10 +7,7 @@ const Image = React.createClass({
 
     render() {
         return (
-            <div>
-                image
-                <img src="images/bob.jpg" />
-            </div>
+            <img className='stacked' src={'images/' + this.props.src} />
         );
     }
 });
