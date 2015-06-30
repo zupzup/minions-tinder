@@ -9,6 +9,7 @@ const Image = React.createClass({
         return (
             <div>
                 image
+                <img src="images/bob.jpg" />
             </div>
         );
     }

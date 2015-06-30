@@ -4,8 +4,6 @@ A react-based implementation of the inspiration feature
 
 ## TODO
 
-* setup
-* babelify gulp file (gulpfile.babel.js)
 * stacked images
 * removing them via buttons
 * draggable stacked images
@@ -14,3 +12,4 @@ A react-based implementation of the inspiration feature
 
 ## DONE
 
+* [x] setup

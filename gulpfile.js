@@ -20,7 +20,7 @@ var gulp = require('gulp'),
     sourcemapReporter = require('jshint-sourcemap-reporter'),
     webpackConfig = require("./webpack.config.js");
 
-var clientSrcDir = "scripts", flowDest = "tmp_build_flow";
+var clientSrcDir = "scripts";
 
 var startServer = function() {
     new WebpackDevServer(webpack(config), {
@@ -80,6 +80,7 @@ gulp.task("prod", ["clean"], function(callback) {
     console.log('building prod...');
     gulp.src('index.html').pipe(gulp.dest('www'));
     gulp.src('styles/**').pipe(gulp.dest('www/styles/'));
+    gulp.src('images/**').pipe(gulp.dest('www/images/'));
     prodCompiler.run(function(err, stats) {
         if (err) {
             throw new gutil.PluginError("webpack:build-prod", err);
