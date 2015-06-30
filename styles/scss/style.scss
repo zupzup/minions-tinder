@@ -5,9 +5,17 @@ body {
     background: #fff;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .stacked {
     position: absolute;
-    height: 200px;
+    width: 100%;
+    text-align: center;
+    img {
+        height: 200px;
+    }
 }
 
 .stack {
