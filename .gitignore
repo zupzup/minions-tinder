@@ -1,0 +1,8 @@
+node_modules/
+build/
+dist/
+coverage/
+www/
+.sass-cache/
+styles/*.css
+
