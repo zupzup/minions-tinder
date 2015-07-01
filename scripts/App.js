@@ -26,14 +26,18 @@ const App = React.createClass({
     _discardImage() {
         const images = this.state.images;
         this.setState({
-            images: images.slice(0, images.length - 1)
+            images: images.slice(0, images.length - 1),
+            xSize: ICON_SIZE,
+            hSize: ICON_SIZE
         });
     },
 
     _favImage() {
         const images = this.state.images;
         this.setState({
-            images: images.slice(0, images.length - 1)
+            images: images.slice(0, images.length - 1),
+            xSize: ICON_SIZE,
+            hSize: ICON_SIZE
         });
     },
 
@@ -63,12 +67,12 @@ const App = React.createClass({
                         hSizeHandler={this._setHSize}
                         images={this.state.images} />
                 </div>
-                <div className='small-6 columns text-center'>
-                    <i style={{fontSize: this.state.xSize + 'rem'}}
+                <div className='small-6 columns text-center iconcontainer'>
+                    <i style={{fontSize: this.state.xSize + 'rem', marginTop: (ICON_SIZE - this.state.xSize) + 'rem'}}
                         className='buttons ion-close' onClick={this._discardImage} />
                 </div>
-                <div className='small-6 columns text-center'>
-                    <i style={{fontSize: this.state.hSize + 'rem'}}
+                <div className='small-6 columns text-center iconcontainer'>
+                    <i style={{fontSize: this.state.hSize + 'rem', marginTop: (ICON_SIZE - this.state.hSize) + 'rem'}}
                         className='buttons ion-heart' onClick={this._favImage} />
                 </div>
             </div>
