@@ -9,7 +9,7 @@ A react-based implementation of the inspiration feature
 * styling
 * device testing
 * size calculations
-* use simpler draggable without top/left hack
+* use react-animation
 
 ## DONE
 
@@ -20,4 +20,4 @@ A react-based implementation of the inspiration feature
 * [x] images get removed when they are dragged over a threshold
 * [x] preload images
 * [x] images animate away
-
+* [x] use simpler draggable without top/left hack
