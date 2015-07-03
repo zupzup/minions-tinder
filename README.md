@@ -9,6 +9,7 @@ A react-based implementation of the inspiration feature
 * styling
 * device testing
 * size calculations
+* use simpler draggable without top/left hack
 
 ## DONE
 

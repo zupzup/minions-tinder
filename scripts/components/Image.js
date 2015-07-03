@@ -1,7 +1,7 @@
 'use strict';
 
 const React = require('react/addons');
-const Draggable = require('react-draggable');
+const Draggable = require('../external/draggable'); // modified version of react-draggable
 const tweenState = require('react-tween-state');
 const ANIMATION_LENGTH = 150;
 const classNames = require('classnames');
