@@ -4,6 +4,7 @@ const React = require('react/addons');
 const Draggable = require('react-draggable');
 const tweenState = require('react-tween-state');
 const ANIMATION_LENGTH = 150;
+const classNames = require('classnames');
 
 const Image = React.createClass({
     mixins: [React.addons.PureRenderMixin, tweenState.Mixin],
@@ -57,7 +58,6 @@ const Image = React.createClass({
         const endHandler = this.props.endHandler.bind(null, this._animateBack, this._animateOut);
         const tweeningY = this.getTweeningValue('top');
         const tweeningX = this.getTweeningValue('left');
-        const animating = tweeningX > 0 ? ' animating' : '';
 
         const calculatedStyle = {
             left: tweeningX,
@@ -70,7 +70,7 @@ const Image = React.createClass({
                 cancel='.animating'
                 onStop={endHandler}>
                 <div className='stacked' style={calculatedStyle}>
-                    <img draggable="false" className={'handle' + animating} src={'images/' + this.props.src} />
+                    <img draggable="false" className={classNames('handle', {'animating': tweeningX > 0})} src={'images/' + this.props.src} />
                 </div>
             </Draggable>
         );
