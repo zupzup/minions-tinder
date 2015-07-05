@@ -2,6 +2,7 @@
 
 const React = require('react/addons');
 const ImageStack = require('./components/ImageStack');
+const AnimationTest = require('./components/AnimationTest');
 const ICON_SIZE = 4;
 
 const App = React.createClass({
