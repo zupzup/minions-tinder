@@ -34,12 +34,8 @@ const App = React.createClass({
     },
 
     _favImage() {
-        const images = this.state.images;
-        this.setState({
-            images: images.slice(0, images.length - 1),
-            xSize: ICON_SIZE,
-            hSize: ICON_SIZE
-        });
+        this._discardImage();
+        // TODO: save to wishlist
     },
 
     _setXSize(val) {
