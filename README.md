@@ -6,8 +6,7 @@ A react-based implementation of the inspiration feature
 
 * device testing
 * size calculations
-* use react-animation
-* tests
+* use react-motion
 
 ## DONE
 
