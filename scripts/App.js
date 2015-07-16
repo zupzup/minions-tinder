@@ -53,6 +53,7 @@ const App = React.createClass({
     render() {
         return (
             <div className='app row'>
+                <AnimationTest />
                 <div className='small-12 columns text-center'>
                     Drag it!
                 </div>
