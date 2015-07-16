@@ -6,7 +6,6 @@ A react-based implementation of the inspiration feature
 
 * device testing
 * size calculations
-* use react-motion
 
 ## DONE
 
@@ -19,4 +18,5 @@ A react-based implementation of the inspiration feature
 * [x] images animate away
 * [x] use simpler draggable without top/left hack
 * [x] cleanup
+* [x] evaluate react-motion
 

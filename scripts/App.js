@@ -2,7 +2,6 @@
 
 const React = require('react/addons');
 const ImageStack = require('./components/ImageStack');
-const AnimationTest = require('./components/AnimationTest');
 const ICON_SIZE = 4;
 
 const App = React.createClass({
@@ -53,7 +52,6 @@ const App = React.createClass({
     render() {
         return (
             <div className='app row'>
-                <AnimationTest />
                 <div className='small-12 columns text-center'>
                     Drag it!
                 </div>
