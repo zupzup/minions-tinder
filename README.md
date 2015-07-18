@@ -1,6 +1,6 @@
-# React Inspiration 
+# Minions Tinder
 
-A react-based implementation of the inspiration feature
+A react-based implementation of tinder for minions
 
 ## TODO
 
