@@ -4,8 +4,8 @@ A react-based implementation of tinder for minions
 
 ## TODO
 
-* device testing
-* size calculations
+* demo page
+* tests
 
 ## DONE
 
