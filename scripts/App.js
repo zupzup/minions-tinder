@@ -3,20 +3,34 @@
 const React = require('react/addons');
 const ImageStack = require('./components/ImageStack');
 const ICON_SIZE = 4;
+const minions = [
+    'kevin.jpg',
+    'bob.jpg',
+    'stuart.jpg',
+    'minion2.jpg',
+    'minion3.jpg',
+    'minion4.jpg',
+    'minion5.jpg',
+    'minion6.jpg',
+    'minion8.jpg',
+    'minion9.jpg',
+    'minion10.jpg',
+    'minion11.jpg'
+];
 
 const App = React.createClass({
     mixins: [React.addons.PureRenderMixin],
 
     getInitialState() {
         return {
-            images: ['kevin.jpg', 'bob.jpg', 'stuart.jpg'],
+            images: minions,
             xSize: ICON_SIZE,
             hSize: ICON_SIZE
         };
     },
 
     componentWillMount() {
-        const images = ['kevin.jpg', 'bob.jpg', 'stuart.jpg'];
+        const images = minions;
         images.forEach((img) => {
             const image = new Image();
             image.src = 'images/' + img;
@@ -34,7 +48,6 @@ const App = React.createClass({
 
     _favImage() {
         this._discardImage();
-        // TODO: save to wishlist
     },
 
     _setXSize(val) {

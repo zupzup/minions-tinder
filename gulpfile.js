@@ -81,6 +81,7 @@ gulp.task("prod", ["clean"], function(callback) {
     gulp.src('index.html').pipe(gulp.dest('www'));
     gulp.src('styles/**').pipe(gulp.dest('www/styles/'));
     gulp.src('images/**').pipe(gulp.dest('www/images/'));
+    gulp.src('fonts/**').pipe(gulp.dest('www/fonts/'));
     prodCompiler.run(function(err, stats) {
         if (err) {
             throw new gutil.PluginError("webpack:build-prod", err);
