@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-touch-fullscreen" content="yes">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black">
-      <link rel="stylesheet" type="text/css" href="styles/normalize.css">
-      <link rel="stylesheet" type="text/css" href="styles/ionicons.css">
-      <link rel="stylesheet" type="text/css" href="styles/foundation.css">
-      <link rel="stylesheet" type="text/css" href="styles/style.css">
-  </head>
-  <body>
-    <div id="app"/>
-  </body>
-  <script src="scripts/bundle.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/ionicons.css">
+        <link rel="stylesheet" type="text/css" href="styles/foundation.css">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <title>Minions-Tinder</title>
+        <script>
+            function reloadApp() {
+                localStorage.clear();
+                var frm = document.getElementById('reactframe');
+                frm.src = frm.src;
+            }
+        </script>
+    </head>
+    <body style="overflow: auto !important; height: auto !important;">
+        <div class='outer'>
+            <h3>Minions-Tinder <a href='https://github.com/zupzup/minions-tinder'>on Github</a></h3>
+        </div>
+        <div class='twitter'>
+            <a href="https://twitter.com/mzupzup" class="twitter-follow-button" data-show-count="false">Follow @mzupzup</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class='resetbutton'>
+            <p><button onClick="reloadApp()">reset App</button</p>
+        </div>
+        <div class='appcontainer'>
+            <iframe id='reactframe' class='reactframe' src="react.html" width="370" height="657"/>
+        </div>
+    </body>
 </html>
