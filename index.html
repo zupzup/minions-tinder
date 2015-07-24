@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="styles/foundation.css">
         <link rel="stylesheet" type="text/css" href="styles/style.css">
         <title>Minions-Tinder</title>
+        <script defer src="scripts/bundle.js"></script>
         <script>
             function reloadApp() {
                 localStorage.clear();
@@ -27,11 +28,12 @@
             <a href="https://twitter.com/mzupzup" class="twitter-follow-button" data-show-count="false">Follow @mzupzup</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
-        <div class='resetbutton'>
+        <div class='resetbutton hide-for-small-only'>
             <p><button onClick="reloadApp()">reset App</button</p>
         </div>
-        <div class='appcontainer'>
-            <iframe id='reactframe' class='reactframe' src="react.html" width="370" height="657"/>
+        <div id='app' class='hide-for-medium-up'></div>
+        <div class='appcontainer hide-for-small-only'>
+            <iframe id='reactframe' class='reactframe' src="react.html" width="370" height="657"></div>
         </div>
     </body>
 </html>
