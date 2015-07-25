@@ -1,10 +1,9 @@
 # Minions Tinder
 
-A react-based implementation of tinder for minions
+A react-based PoC of a tinder-like swipe interface for minions
 
 ## TODO
 
-* demo page
 * tests
 
 ## DONE
@@ -19,4 +18,5 @@ A react-based implementation of tinder for minions
 * [x] use simpler draggable without top/left hack
 * [x] cleanup
 * [x] evaluate react-motion
+* [x] demo page
 
