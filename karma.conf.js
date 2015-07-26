@@ -1,4 +1,3 @@
-var RewirePlugin = require("rewire-webpack");
 var path = require('path');
 module.exports = function(config) {
     config.set({
@@ -28,10 +27,7 @@ module.exports = function(config) {
                     }
                 ]
             },
-            watch: true,
-            plugins: [
-                new RewirePlugin()
-            ]
+            watch: true
         },
         webpackMiddleware: {
             noInfo: true

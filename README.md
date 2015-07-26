@@ -11,7 +11,6 @@ and [react-tween-state](https://github.com/chenglou/react-tween-state).
 
 * React 0.13.2
 * Babel
-* react-pure-render
 * gulp
 * react-hot-loader
 * webpack
