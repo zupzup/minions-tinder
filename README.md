@@ -2,7 +2,7 @@
 
 A react-based PoC of a tinder-like swipe interface for minions
 
-[Demo](zupzup.github.io/minions-tinder)
+[Demo](https://zupzup.github.io/minions-tinder)
 
 Implemented using a slimmed down version of [react-draggable](https://github.com/mzabriskie/react-draggable)
 and [react-tween-state](https://github.com/chenglou/react-tween-state).
