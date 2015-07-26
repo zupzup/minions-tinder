@@ -14,4 +14,6 @@ and [react-tween-state](https://github.com/chenglou/react-tween-state).
 * gulp
 * react-hot-loader
 * webpack
+* eslint
 * karma/mocha/chai/sinon
+* foundation & ionicons
