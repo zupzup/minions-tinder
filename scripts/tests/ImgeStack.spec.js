@@ -34,13 +34,13 @@ describe('ImageStack', () => {
             const res = TestUtils.renderIntoDocument(<ImageStack images={images}
                 xSizeHandler={xSizeHandler} hSizeHandler={hSizeHandler}
                 leftHandler={leftHandler} rightHandler={rightHandler} />);
-            res._handleDrag(null, {
+            res._handleDrag({preventDefault: () => {}}, {
                 position: {
                     left: 10
                 }
             });
             expect(hSizeHandler.calledOnce).to.equal(true);
-            res._handleDrag(null, {
+            res._handleDrag({preventDefault: () => {}}, {
                 position: {
                     left: -10
                 }

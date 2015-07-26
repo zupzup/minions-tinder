@@ -5,6 +5,10 @@ A react-based PoC of a tinder-like swipe interface for minions
 ## TODO
 
 * tests
+* mobile perf
+    * https://facebook.github.io/react/docs/perf.html
+    * https://facebook.github.io/react/docs/advanced-performance.html
+    * only update every n (threshold) -> shouldComponentUpdate
 
 ## DONE
 

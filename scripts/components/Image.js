@@ -69,7 +69,9 @@ const Image = React.createClass({
                 onDrag={this.props.dragHandler}
                 cancel='.animating' onStop={endHandler}>
                 <div className='stacked' style={calculatedStyle}>
-                    <img draggable="false" className={classNames('handle', {'animating': tweeningX > 0})} src={'images/' + this.props.src} />
+                    <img draggable="false"
+                        className={classNames('handle', {'animating': tweeningX > 0})}
+                        src={'images/' + this.props.src} />
                 </div>
             </Draggable>
         );

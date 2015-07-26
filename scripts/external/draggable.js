@@ -26,7 +26,7 @@ const eventsFor = {
     }
 };
 
-let dragEventFor = eventsFor['mouse'];
+let dragEventFor = eventsFor.mouse;
 
 function getControlPosition(e) {
     const position = (e.touches && e.touches[0]) || e;
@@ -61,8 +61,8 @@ module.exports = {
         },
 
         componentWillUnmount() {
-            document.removeEventListener(dragEventFor['move'], this.handleDrag, true);
-            document.removeEventListener(dragEventFor['end'], this.handleDragEnd, true);
+            document.removeEventListener(dragEventFor.move, this.handleDrag, true);
+            document.removeEventListener(dragEventFor.end, this.handleDragEnd, true);
         },
 
         getInitialState() {
@@ -75,11 +75,11 @@ module.exports = {
         handleDragStart(e) {
             if (!(this.props.handle && e.target.matches(this.props.handle)) ||
                 (this.props.cancel && e.target.matches(this.props.cancel))) {
-                    return;
+                return;
             }
             const dragPoint = getControlPosition(e);
 
-            this.setState((state) => {
+            this.setState(() => {
                 return {
                     dragging: true,
                     offsetX: dragPoint.clientX - this.state.clientX,
@@ -87,8 +87,8 @@ module.exports = {
                 };
             });
 
-            document.addEventListener(dragEventFor['move'], this.handleDrag, true);
-            document.addEventListener(dragEventFor['end'], this.handleDragEnd, true);
+            document.addEventListener(dragEventFor.move, this.handleDrag, true);
+            document.addEventListener(dragEventFor.end, this.handleDragEnd, true);
         },
 
         handleDragEnd(e) {
@@ -96,7 +96,7 @@ module.exports = {
                 return;
             }
 
-            this.setState((state) => {
+            this.setState(() => {
                 return {
                     dragging: false
                 };
@@ -104,8 +104,8 @@ module.exports = {
 
             this.props.onStop(e, createUIEvent(this));
 
-            document.removeEventListener(dragEventFor['move'], this.handleDrag, true);
-            document.removeEventListener(dragEventFor['end'], this.handleDragEnd, true);
+            document.removeEventListener(dragEventFor.move, this.handleDrag, true);
+            document.removeEventListener(dragEventFor.end, this.handleDragEnd, true);
         },
 
         handleDrag(e) {
@@ -114,7 +114,7 @@ module.exports = {
             const clientY = dragPoint.clientY - this.state.offsetY;
 
             this.props.onDrag(e, createUIEvent(this));
-            this.setState((state) => {
+            this.setState(() => {
                 return {
                     clientX: clientX,
                     clientY: clientY
@@ -124,19 +124,19 @@ module.exports = {
 
         onMouseDown(ev) {
             // Prevent 'ghost click' which happens 300ms after touchstart if the event isn't cancelled.
-            if (dragEventFor == eventsFor['touch']) {
+            if (dragEventFor == eventsFor.touch) {
                 return ev.preventDefault();
             }
             return this.handleDragStart.apply(this, arguments);
         },
 
-        onTouchStart(ev) {
-            dragEventFor = eventsFor['touch'];
+        onTouchStart() {
+            dragEventFor = eventsFor.touch;
             return this.handleDragStart.apply(this, arguments);
         },
 
         resetState() {
-            this.setState((state) => {
+            this.setState(() => {
                 return this.getInitialState();
             });
         },

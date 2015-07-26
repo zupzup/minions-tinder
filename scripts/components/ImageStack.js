@@ -17,6 +17,7 @@ const ImageStack = React.createClass({
     },
 
     _handleDrag(event, ui) {
+        event.preventDefault();
         const factor = Math.abs(ui.position.left / THRESHOLD);
         if (ui.position.left > 0) {
             this.props.hSizeHandler(ICON_SIZE + (factor > 1 ? 1 : factor));
@@ -28,7 +29,7 @@ const ImageStack = React.createClass({
     _handleDragEnd(animateBackHandler, animateOutHandler, e, ui) {
         if (ui.position.left > THRESHOLD) {
             animateOutHandler(ui.position.left, ui.position.top, this.props.rightHandler);
-        } else if (ui.position.left < (- THRESHOLD)) {
+        } else if (ui.position.left < (-THRESHOLD)) {
             animateOutHandler(ui.position.left, ui.position.top, this.props.leftHandler);
         } else {
             animateBackHandler(ui.position.left, ui.position.top);
@@ -39,10 +40,10 @@ const ImageStack = React.createClass({
         return (
             <div className='stack'>
                 {this.props.images.map((img) => {
-                    return <Image
+                    return (<Image
                         endHandler={this._handleDragEnd}
                         dragHandler={this._handleDrag}
-                        key={img} src={img}/>
+                        key={img} src={img}/>);
                 })}
             </div>
         );
