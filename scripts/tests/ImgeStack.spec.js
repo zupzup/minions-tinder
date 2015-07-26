@@ -20,7 +20,7 @@ describe('ImageStack', () => {
     });
 
     it('renders a stack of Images', () => {
-        const images = ['minion1.jpg'];
+        const images = [{src: 'minion1.jpg', hidden: false}];
         const res = TestUtils.renderIntoDocument(<ImageStack images={images}
             xSizeHandler={xSizeHandler} hSizeHandler={hSizeHandler}
             leftHandler={leftHandler} rightHandler={rightHandler} />);
@@ -30,7 +30,7 @@ describe('ImageStack', () => {
 
     describe('_handleDrag', () => {
         it('calls the sizehandlers based on positive or negative dragging', () => {
-            const images = ['minion1.jpg'];
+            const images = [{src: 'minion1.jpg', hidden: false}];
             const res = TestUtils.renderIntoDocument(<ImageStack images={images}
                 xSizeHandler={xSizeHandler} hSizeHandler={hSizeHandler}
                 leftHandler={leftHandler} rightHandler={rightHandler} />);
@@ -52,7 +52,7 @@ describe('ImageStack', () => {
     describe('_handleDragEnd', () => {
         it('animates back if it wasnt dragged far enough', () => {
             const animateBackSpy = sinon.spy();
-            const images = ['minion1.jpg'];
+            const images = [{src: 'minion1.jpg', hidden: false}];
             const res = TestUtils.renderIntoDocument(<ImageStack images={images}
                 xSizeHandler={xSizeHandler} hSizeHandler={hSizeHandler}
                 leftHandler={leftHandler} rightHandler={rightHandler} />);
@@ -67,7 +67,7 @@ describe('ImageStack', () => {
 
         it('animates out otherwise', () => {
             const animateOutSpy = sinon.spy();
-            const images = ['minion1.jpg'];
+            const images = [{src: 'minion1.jpg', hidden: false}];
             const res = TestUtils.renderIntoDocument(<ImageStack images={images}
                 xSizeHandler={xSizeHandler} hSizeHandler={hSizeHandler}
                 leftHandler={leftHandler} rightHandler={rightHandler} />);

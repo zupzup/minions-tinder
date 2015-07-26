@@ -1,6 +1,6 @@
 // way simplified version of https://github.com/mzabriskie/react-draggable
 'use strict';
-const React = require('react');
+const React = require('react/addons');
 const assign = require('object-assign');
 
 function createUIEvent(draggable) {
@@ -51,7 +51,6 @@ function createCSSTransform(style) {
 module.exports = {
     createCSSTransform: createCSSTransform,
     draggable: React.createClass({
-        mixins: [React.addons.PureRenderMixin],
 
         propTypes: {
             handle: React.PropTypes.string,
@@ -109,6 +108,7 @@ module.exports = {
         },
 
         handleDrag(e) {
+            e.preventDefault();
             const dragPoint = getControlPosition(e);
             const clientX = dragPoint.clientX - this.state.offsetX;
             const clientY = dragPoint.clientY - this.state.offsetY;

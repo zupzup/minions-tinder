@@ -43,7 +43,8 @@ const ImageStack = React.createClass({
                     return (<Image
                         endHandler={this._handleDragEnd}
                         dragHandler={this._handleDrag}
-                        key={img} src={img}/>);
+                        key={img.src} src={img.src}
+                        hidden={img.hidden}/>);
                 })}
             </div>
         );

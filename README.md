@@ -2,25 +2,15 @@
 
 A react-based PoC of a tinder-like swipe interface for minions
 
-## TODO
+Implemented using a slimmed down version of [react-draggable](https://github.com/mzabriskie/react-draggable)
+and [react-tween-state](https://github.com/chenglou/react-tween-state).
 
-* tests
-* mobile perf
-    * https://facebook.github.io/react/docs/perf.html
-    * https://facebook.github.io/react/docs/advanced-performance.html
-    * only update every n (threshold) -> shouldComponentUpdate
+# Dev
 
-## DONE
-
-* [x] setup
-* [x] stacked images
-* [x] removing them via buttons
-* [x] draggable stacked images
-* [x] images get removed when they are dragged over a threshold
-* [x] preload images
-* [x] images animate away
-* [x] use simpler draggable without top/left hack
-* [x] cleanup
-* [x] evaluate react-motion
-* [x] demo page
-
+* React 0.13.2
+* Babel
+* react-pure-render
+* gulp
+* react-hot-loader
+* webpack
+* karma/mocha/chai/sinon

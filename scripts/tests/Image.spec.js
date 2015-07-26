@@ -9,14 +9,15 @@ describe('Image', () => {
     const dragHandler = () => {};
 
     it('renders a draggable image', () => {
-        const res = TestUtils.renderIntoDocument(<Image src='yay' endHandler={endHandler} dragHandler={dragHandler} />);
+        const res = TestUtils.renderIntoDocument(<Image src='yay'
+            hidden={false} endHandler={endHandler} dragHandler={dragHandler} />);
         expect(res).not.to.equal(undefined);
     });
 
     describe('_animateBack', () => {
         it('calls tweenState twice, triggering an animation back', () => {
             const res = TestUtils.renderIntoDocument(
-                <Image src='yay' endHandler={endHandler} dragHandler={dragHandler} />
+                <Image src='yay' endHandler={endHandler} hidden={false} dragHandler={dragHandler} />
             );
             res.tweenState = sinon.spy();
             res._animateBack(5, 10);
@@ -27,7 +28,7 @@ describe('Image', () => {
     describe('_animateOut', () => {
         it('triggers tweenState twice, triggering an animation out', () => {
             const res = TestUtils.renderIntoDocument(
-                <Image src='yay' endHandler={endHandler} dragHandler={dragHandler} />
+                <Image src='yay' endHandler={endHandler} hidden={false} dragHandler={dragHandler} />
             );
             res.tweenState = sinon.spy();
             res._animateOut(5, 10);
@@ -38,7 +39,7 @@ describe('Image', () => {
     describe('_resetDraggable', () => {
         it('resets the draggable element to its initial state', () => {
             const res = TestUtils.renderIntoDocument(
-                <Image src='yay' endHandler={endHandler} dragHandler={dragHandler} />
+                <Image src='yay' endHandler={endHandler} hidden={false} dragHandler={dragHandler} />
             );
             res.refs.draggable.resetState = sinon.spy();
             res._resetDraggable();

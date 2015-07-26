@@ -20,7 +20,8 @@ const Image = React.createClass({
     propTypes: {
         src: React.PropTypes.string.isRequired,
         endHandler: React.PropTypes.func.isRequired,
-        dragHandler: React.PropTypes.func.isRequired
+        dragHandler: React.PropTypes.func.isRequired,
+        hidden: React.PropTypes.bool.isRequired
     },
 
     _animateBack(endX, endY) {
@@ -56,6 +57,9 @@ const Image = React.createClass({
     },
 
     render() {
+        if (this.props.hidden) {
+            return null;
+        }
         const endHandler = this.props.endHandler.bind(null, this._animateBack, this._animateOut);
         const tweeningY = this.getTweeningValue('top');
         const tweeningX = this.getTweeningValue('left');

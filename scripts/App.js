@@ -16,7 +16,12 @@ const minions = [
     'minion9.jpg',
     'minion10.jpg',
     'minion11.jpg'
-];
+].map((src, index, arr) => {
+    return {
+        src,
+        hidden: (index > arr.length - 3) ? false : true
+    };
+});
 
 const App = React.createClass({
     mixins: [React.addons.PureRenderMixin],
@@ -33,14 +38,21 @@ const App = React.createClass({
         const images = minions;
         images.forEach((img) => {
             const image = new Image();
-            image.src = 'images/' + img;
+            image.src = 'images/' + img.src;
         });
     },
 
     _discardImage() {
-        const images = this.state.images;
+        const images = this.state.images.reduce((acc, i, index, arr) => {
+            if (index === arr.length - 1) {
+                return acc;
+            } else if (index > arr.length - 4) {
+                i.hidden = false;
+            }
+            return acc.concat([i]);
+        }, []);
         this.setState({
-            images: images.slice(0, images.length - 1),
+            images,
             xSize: ICON_SIZE,
             hSize: ICON_SIZE
         });
